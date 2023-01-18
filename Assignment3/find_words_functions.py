@@ -34,3 +34,10 @@ def get_words_main(lines):
                 if len(word) > 0:
                     clean += [word]
     return clean
+
+# Provide outpath and current text and the function
+# will transfer everything there.
+def save_words_main(outpath, now):
+    with open(outpath, "w", encoding='utf-8') as f:
+        f.write(' '.join(now))
+        f.close()
