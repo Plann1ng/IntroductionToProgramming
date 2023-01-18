@@ -9,3 +9,18 @@ path = frst + adittional
 to_file = path + file
 
 outpath = "Outpath.txt"
+
+# Defined a main function to save users from filling all the required arguments
+# for the previous functions. Which reduces the chances of wrong inputs as well
+
+
+def main(path):
+    rows = read_file_main(path)
+    print(f"\nRead {len(rows)} lines from file {path}")
+    cleaner = get_words_main(rows)
+    save_words_main(outpath, cleaner)
+    print(f"Saved {len(cleaner)} words in file {outpath}")
+
+
+# Calling the main function
+output = main(to_file)
