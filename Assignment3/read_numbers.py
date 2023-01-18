@@ -26,3 +26,12 @@ def read_integers(path):
                 numbers = int(numbers)
                 total += [numbers]
     return total
+
+# Check both files from the directory and return values from functions.
+for files in os.scandir(path):
+    lst = read_integers(files)
+    mn = mean(lst)
+    print(f"\nMean value of the numbers given is {mn}")
+    output = standart_devision(lst, mn)
+    print("Value after standart devision of", end="")
+    print(f' the same numbers is {round(output, 2)}\n')
