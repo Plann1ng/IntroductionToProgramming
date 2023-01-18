@@ -61,3 +61,54 @@ class Deque:
             for i in range(self.size-1):
                 node = node.nxt
             return node.value
+
+
+    # Returns (without removing) the first entry in the deque
+    # Gives error message and returns None when accessing empty deque.
+    def get_first(self):
+        if self.head is None:
+            print("Get can't be applied on an empty list")
+            return None
+        else:
+            node = self.head
+            for i in range(0):
+                node = node.nxt
+            return node.value
+
+    # Removes and returns the first entry in the deque.
+    # Gives error message and returns None when accessing empty deque.
+    # The case size = 1 requires speciall handling
+    def remove_first(self):
+        if self.size == 0:
+            print("Remove can't be applied on empty")
+            return
+        current = self.head
+        if self.size == 1:
+            self.head = None
+            self.tail = None
+            self.size = 0
+        else:
+            self.head = self.head.nxt
+            self.size -= 1
+        return current.value
+
+    # Removes and returns the last entry in the deque.
+    # Gives error message and returns None when accessing empty deque.
+    # The case size = 1 requires speciall handling
+    def remove_last(self):
+        if self.head is None:
+            print("Remove can't be applied on an empty list")
+            return
+        elif self.size == 1:
+            self.head = None
+            self.tail = None
+            self.size = 0
+        else:
+            before = self.head
+            last = self.tail
+            while before != last:
+                before = before.nxt
+            before.nxt = None
+            self.tail = before
+            self.size -= 1
+            return last.value
