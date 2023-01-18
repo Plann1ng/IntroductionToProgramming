@@ -30,3 +30,11 @@ class MultiDisplay:
         self.message = word
         self.count = number
         return print(('\n'+word) * number)
+
+    # Returns "x" times string using the data from previous functions
+    def get_display(self):
+        return print(self.message * self.count)
+
+    # Returns current string and integer with suitable message
+    def to_string(self):
+        return f'Message: {self.message}, Count: {self.count}'
