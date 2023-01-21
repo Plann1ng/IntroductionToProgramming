@@ -19,3 +19,19 @@ class Node:
     left: Any = None  # left child (a Node)
     right: Any = None  # right child (a Node)
 
+    def put(self, key, value):
+        new = Node(key, value, None, None)
+        if key < self.key:
+            if self.left is None:
+                self.left = new
+            else:
+                return self.left.put(key, value)
+        elif key > self.key:
+            if self.right is None:
+                self.right = new
+            else:
+                return self.right.put(key, value)
+        else:
+            self.value = value
+
+            # Placeholder code ==> to be replace
