@@ -62,6 +62,12 @@ def bst_depth(word_list):
         bstTwo.BstMap.put(self_bst, word, value)
     print("The max depth of the Binary Search Tree is: ", self_bst.max_depth())
 
+### calling all functions
+def main(wlist):
+    count_unique(wlist)
+    top10(wlist)
+    hsh_buckets(wlist)
+    bst_depth(wlist)
 
 
 
