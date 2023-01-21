@@ -51,3 +51,32 @@ class HashSet:
                 str += element + " "
         str += " }"
         return str
+
+    # Returns current number of elements in set
+    def get_size(self):
+        return self.size
+
+    # Returns True if word in set, otherwise False
+    def contains(self, word):
+        hashval = self.get_hash(word)
+        index = hashval % self.bucket_list_size()
+        if word in self.buckets[index]:
+            return True
+        else:
+            return False
+
+    # Returns current size of bucket list
+    def bucket_list_size(self):
+        return len(self.buckets)
+
+    # Removes word from set if there, does nothing
+    # if word not in set
+    def remove(self, word):
+        if self.contains(word):
+            hashval = self.get_hash(word)
+            index = hashval % len(self.buckets)
+            self.buckets[index].remove(word)
+            self.size = self.size-1
+        else:
+            pass
+
