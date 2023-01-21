@@ -113,3 +113,18 @@ class BstMap:
             res += "}"
             return res
 
+    # Returns the current number of key-value pairs in the map
+    def size(self):
+        if self.root is None:
+            return 0
+        else:
+            return self.root.count()
+
+    # Returns the value for a given key. Returns None
+    # if key doesn't exist (or map is empty)
+    def get(self, key):
+        if self.root is None:
+            return None
+        else:
+            return self.root.get(key)
+
