@@ -19,3 +19,16 @@ def count_occurencies(path):
                 empty[keys] += 1
     return empty
 
+def main(path):
+    trial = count_unique(path)
+    print(f'{trial}\n')
+    check = count_occurencies(path)
+    sortd_dct = sorted(check.items(), key=lambda tpl: -tpl[1])
+    print("10 most frequent used words:\n")
+    for i in range(10):
+        print(f'{sortd_dct[i][0]}\t{sortd_dct[i][1]}')
+
+print("100k sentences")
+main(os.getcwd() + "/Outpath_100k_sentences.txt")
+print("\nholy grail")
+main(os.getcwd() + "/Outpath_holy_grail.txt")
