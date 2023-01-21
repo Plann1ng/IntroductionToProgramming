@@ -35,3 +35,13 @@ class Node:
             self.value = value
 
             # Placeholder code ==> to be replace
+
+    def to_string(self):
+        s = ''
+        if self.left is not None:
+            s += self.left.to_string()
+        s += f'({str(self.key)},{str(self.value)}) '
+        if self.right is not None:
+            s += self.right.to_string()
+        return s
+
