@@ -54,3 +54,13 @@ class Node:
             c += self.left.count()
         return c
 
+    def get(self, key):
+        if self.key == key:
+            return self.value
+        else:
+            if self.left is not None and key < self.key:
+                return self.left.get(key)
+            elif self.right is not None and key > self.key:
+                return self.right.get(key)
+
+
