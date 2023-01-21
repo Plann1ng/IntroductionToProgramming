@@ -54,5 +54,15 @@ def hsh_buckets(word_list):
     print("The maximum bucket size is: ", self_hsh.max_bucket_size())
 
 
+### 3.4 max depth of binary search tree
+def bst_depth(word_list):
+    self_bst.clear_all()
+    for word in word_list:
+        value = hashTwo.get_hash(self_hsh, word)
+        bstTwo.BstMap.put(self_bst, word, value)
+    print("The max depth of the Binary Search Tree is: ", self_bst.max_depth())
+
+
+
 
 
