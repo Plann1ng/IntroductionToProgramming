@@ -45,3 +45,12 @@ class Node:
             s += self.right.to_string()
         return s
 
+    def count(self):
+        c = 0
+        if self.right is not None:
+            c += self.right.count()
+        c += 1
+        if self.left is not None:
+            c += self.left.count()
+        return c
+
