@@ -87,3 +87,29 @@ class Node:
                     self.right.as_list(lst)
                 return lst
 
+# The BstMap class is rather simple. It basically just takes care
+# of the case when the map is empty. All other cases are delegated
+# to the root node ==> the Node class.
+#
+# The class below is complete ==> not to be changed
+@dataclass
+class BstMap:
+    root: Node = None
+
+    # Adds a key-value pair to the map
+    def put(self, key, value):
+        if self.root is None:  # Empty, add first node
+            self.root = Node(key, value, None, None)
+        else:
+            self.root.put(key, value)
+
+    # Returns a s representation of all the key-value pairs
+    def to_string(self):
+        if self.root is None:  # Empty, return empty brackets
+            return "{ }"
+        else:
+            res = "{ "
+            res += self.root.to_string()
+            res += "}"
+            return res
+
