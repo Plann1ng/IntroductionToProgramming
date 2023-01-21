@@ -128,3 +128,25 @@ class BstMap:
         else:
             return self.root.get(key)
 
+    # Returns the maximum tree depth. That is, the length
+    # (counted in nodes) of the longest root-to-leaf path
+    def max_depth(self):
+        if self.root is None:
+            return 0
+        else:
+            return self.root.max_depth()
+
+    # Returns a sorted list of all key-value pairs in the map.
+    # Each key-value pair is represented as a tuple and the
+    # list is sorted on the keys ==> left-to-right in-order
+    def as_list(self):
+        lst = []
+        if self.root is None:
+            return lst
+        else:
+            return self.root.as_list(lst)
+    
+    def clear_all(self):
+        self.root = None
+
+
