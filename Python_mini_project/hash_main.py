@@ -17,3 +17,17 @@ print("get_size():", words.get_size())             # 14
 print("contains(Fred):", words.contains("Fred"))   # True
 print("contains(Bob):", words.contains("Bob"))     # False
 
+# Hash specific data
+mx = words.max_bucket_size()
+print("\nmax bucket:", mx)                # 2
+buckets = words.bucket_list_size()
+print("bucket list size:", buckets)     # 16
+print(words.buckets)
+
+# Remove elements
+delete = ["Ceve", "Adam", "Ceve", "Jonas", "Ola"]
+for s in delete:
+    words.remove(s)
+print("\nget_size:", words.get_size())   # 10
+print("to_string():", words.to_string())   # { David Amer Owen Ella Morgan Fredrik Zoe Fred Albin Simon }
+
