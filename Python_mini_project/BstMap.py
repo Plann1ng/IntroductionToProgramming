@@ -63,4 +63,27 @@ class Node:
             elif self.right is not None and key > self.key:
                 return self.right.get(key)
 
+    def max_depth(self):
+        max_depth = 1
+        left_depth = 0
+        right_depth = 0
+        if self.left is not None:
+            left_depth += self.left.max_depth()
+        if self.right is not None:
+            right_depth += self.right.max_depth()
+        if left_depth > right_depth:  # Increase the depth with the left node's
+            max_depth += left_depth
+        else:
+            max_depth += right_depth
+        return max_depth
+
+    # We do a left-to-right in-order traversal of the tree
+    # to get the key-value pairs sorted base on their keys
+    def as_list(self, lst):
+                if self.left is not None:
+                    self.left.as_list(lst)
+                lst.append((self.key, self.value))
+                if self.right is not None:
+                    self.right.as_list(lst)
+                return lst
 
