@@ -80,3 +80,14 @@ class HashSet:
         else:
             pass
 
+    # Returns the size of the bucket with most elements
+    def max_bucket_size(self):
+        max_size = 0
+        for i in self.buckets:
+            count_size = 0
+            for element in i:
+                count_size += 1
+                if count_size > max_size:
+                    max_size = count_size
+        return max_size
+
