@@ -46,5 +46,13 @@ def top10(word_list):
     print(result)
 
 
+### 3.3 max bucket size of the hash table
+def hsh_buckets(word_list):
+    hashTwo.init(self_hsh)
+    for element in word_list:
+        hashTwo.add(self_hsh, element)
+    print("The maximum bucket size is: ", self_hsh.max_bucket_size())
+
+
 
 
