@@ -70,5 +70,13 @@ def main(wlist):
     bst_depth(wlist)
 
 
+word_list_a = read_file(os.getcwd() + "/Outpath_100k_sentences.txt")
+word_list_b = read_file(os.getcwd() + "/Outpath_holy_grail.txt")
+print("**********\nResults for the 100k sentences file:\n**********\n")
+main(word_list_a)
+print("\n**********\nResults for the holy grail file:\n**********\n")
+main(word_list_b)
+
+
 
 
